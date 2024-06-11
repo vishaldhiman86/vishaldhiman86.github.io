@@ -1,0 +1,140 @@
+site_name: AWS Docs
+site_description: "AWS Docs"
+site_author: "AllegiantAir"
+docs_dir: conf_md/
+repo_name: "Allegiant AWS Docs"
+repo_url: "https://github.com/vishaldhiman86/vishaldhiman86.github.io"
+# nav:
+#   - Home: index.md
+# theme:
+#   name: "material"
+#   features:
+#     - navigation.instant
+#     - navigation.instant.prefetch
+#     - navigation.instant.progress
+#     - navigation.tracking
+#     - navigation.tabs
+#     - navigation.tabs.sticky
+#     - navigation.sections
+#     - navigation.path
+#     - navigation.top
+#   palette:
+#     # Palette toggle for light mode
+#     - scheme: default
+#       toggle:
+#         icon: material/brightness-7
+#         name: Switch to dark mode
+#     # Palette toggle for dark mode
+#     - scheme: slate
+#       toggle:
+#         icon: material/brightness-4
+#         name: Switch to light mode
+
+theme:
+  name: "material"
+  icon:
+    logo: material/library-outline
+    repo: fontawesome/brands/github
+
+  features:
+    - announce.dismiss
+    - content.tooltips
+
+#    - navigation.sections
+#    - navigation.expand
+#    - navigation.tabs
+#    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.indexes
+
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+# Plugins
+plugins:
+  - awesome-pages:
+      filename: .pages
+      collapse_single_pages: true
+      strict: false
+      order: asc
+      sort_type: natural
+      order_by: title
+  - tags:
+      tags_file: tags.md
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - mermaid2
+  - open-in-new-tab
+  - glightbox:
+      effect: zoom
+      width: 80%
+      height: auto
+      auto_caption: true
+      caption_position: bottom
+      background: white
+      shadow: true
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+      show_email_address: true
+      count_empty_lines: true
+      fallback_to_empty: true
+      sort_authors_by: name
+      authorship_threshold_percent: 0
+      exclude:
+        - index.md
+      enabled: true
+      strict: false
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - md_in_html
+  - def_list
+  - tables
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - toc:
+      toc_depth: 3
+  - pymdownx.critic:
+      mode: view
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      line_spans: __span
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
