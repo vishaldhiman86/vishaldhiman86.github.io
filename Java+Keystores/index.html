@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../Mulesoft%2BSSL%2Bcertificate%2Brenewal/">
+        <link rel="prev" href="../AnyConnect%2BCertificate%2Bfor%2BVPN/">
       
       
-        <link rel="next" href="../Mulesoft%2Bapplications%2Bdeploy/">
+        <link rel="next" href="../Mulesoft%2BHealth%2BChecks/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Mulesoft SSL certificates matrix - AWS Docs</title>
+        <title>Java Keystores - AWS Docs</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mulesoft-ssl-certificates-matrix" class="md-skip">
+        <a href="#java-keystores" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mulesoft SSL certificates matrix
+              Java Keystores
             
           </span>
         </div>
@@ -288,10 +288,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Java%2BKeystores/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -300,6 +309,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -388,19 +398,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Mulesoft%2BSSL%2Bcertificates%2Bmatrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -409,7 +410,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -570,67 +570,136 @@
   
 
 
-<h1 id="mulesoft-ssl-certificates-matrix">Mulesoft SSL certificates matrix</h1>
-<table>
-<thead>
-<tr>
-<th><strong>ENV</strong></th>
-<th><strong>EXT/INT CN</strong></th>
-<th><strong>current cert EXP date</strong></th>
-<th><strong>Authority</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DEV-EXT</td>
-<td><a href="http://ext.dev.api.aws.allegiantair.com">ext.dev.api.aws.allegiantair.com</a></td>
-<td>Wed, 05 Jun 2024 15:40:32 GMT</td>
-<td>GoDaddy</td>
-</tr>
-<tr>
-<td>DEV-INT</td>
-<td><a href="http://dev.api.aws.allegiantair.com">dev.api.aws.allegiantair.com</a></td>
-<td>Thu, 19 Sep 2024 17:27:02 GMT</td>
-<td>GoDaddy</td>
-</tr>
-<tr>
-<td>QA-EXT</td>
-<td><a href="http://ext.dev.api.aws.allegiantair.com">ext.qa.api.aws.allegiantair.com</a></td>
-<td>Wed, 05 Jun 2024 15:26:17 GMT</td>
-<td>GoDaddy</td>
-</tr>
-<tr>
-<td>QA-INT</td>
-<td><a href="http://qa.api.aws.allegiantair.com">qa.api.aws.allegiantair.com</a></td>
-<td>Sat, 28 Sep 2024 16:24:21 GMT</td>
-<td>GoDaddy</td>
-</tr>
-<tr>
-<td>STG-EXT</td>
-<td><a href="http://ext.qa.api.aws.allegiantair.com">ext.stg.api.aws.allegiantair.com</a></td>
-<td>Wed, 26 Jun 2024 18:27:18 GMT</td>
-<td>GoDaddy</td>
-</tr>
-<tr>
-<td>STG-INT</td>
-<td><a href="http://ext.stg.api.aws.allegiantair.com">stg.api.aws.allegiantair.com</a></td>
-<td>Wed, 26 Jun 2024 18:27:16 GMT</td>
-<td>GoDaddy</td>
-</tr>
-<tr>
-<td>PRD-EXT</td>
-<td><a href="http://ext.api.aws.allegiantair.com">ext.api.aws.allegiantair.com</a></td>
-<td>June 27, 2024 at 7:04:55 AM</td>
-<td>GoDaddy</td>
-</tr>
-<tr>
-<td>PRD-INT</td>
-<td><a href="http://ext.api.aws.allegiantair.com">api.aws.allegiantair.com</a></td>
-<td>June 23, 2024 at 7:10:13 AM</td>
-<td>GoDaddy</td>
-</tr>
-</tbody>
-</table>
+<h1 id="java-keystores">Java Keystores</h1>
+<h1 id="video-overview">Video Overview:</h1>
+<p><a class="glightbox" href="../media/image1.tmp" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="" src="../media/image1.tmp" /></a></p>
+<p>The following procedure applies to Tomcat and Jboss:</p>
+<p>Please NOTE: </p>
+<ul>
+<li>
+<p>for Jboss Domain (legacy) you need to use a 'keytool' command on one
+    of the old jboss domain nodes, otherwise the cert format is not
+    recognized on these old hosts.</p>
+</li>
+<li>
+<p>for Tomcat keystore same applies.</p>
+</li>
+<li>
+<p>for Jboss Standalone and Springboot you can compile the keystore on
+    your workstation or rather on a Jboss Standalone node.</p>
+</li>
+<li>
+<p>I'm  not exactly sure why that is, seems to me it's a version of
+    keytool matter, but not sure, couldn't spare time to find out why.</p>
+</li>
+</ul>
+<p>Request the Certificate and Key from an InfoSec or Universal resource.
+You will need to request they download the file in a PEM OpenSSL format,
+with separate key and cert files:</p>
+<p>NOTE:</p>
+<p>If you receive a key/cert from Venify, you will need to decrypt it
+before use:</p>
+<p>Use the following command and the supplied password (given to you when
+the certificate was given) to decrypt the files:</p>
+<p>###</p>
+<p>openssl rsa -in \&lt;original encrypted file name&gt; -out \&lt;name of new file
+for decrypted file&gt;</p>
+<p>###</p>
+<p>e.g.:</p>
+<p>openssl rsa -in qa1_wildcard_cert_2022_Key.key_encr -out
+qa1_wildcard_cert_2022_Key.key</p>
+<p><strong>You will then be prompted for the encryption key. Input this, and your
+decrypted file should be generated and can be used in the following
+steps</strong></p>
+<p>To properly create a keystore from scratch</p>
+<p>First make a copy of the cert using the setalias command which will
+force the friendlyName attribute</p>
+<p>openssl x509 -in _.allegiantair.com.crt -setalias "g4_wildcardcert"
+-out _.allegiantair.com.alias.crt</p>
+<p>Next, convert the PEM format to pkcs12, which bundles everything
+together (provide password: changeit).</p>
+<p>openssl pkcs12 -export -out _.allegiantair.com.pk12 -name
+g4_wildcardcert -caname g4_wildcardcert -inkey _.allegiantair.com.key
+-in _.allegiantair.com.alias.crt -certfile gd_bundle-g2-g1.crt</p>
+<p>Then, you must convert the pkcs bundle to a Java Keystore</p>
+<p>keytool -importkeystore -deststorepass changeit -destkeypass changeit
+-destkeystore jboss.keystore.wcz -srckeystore _.allegiantair.com.pk12
+-srcstoretype pkcs12 -srcstorepass XXXXXXXXXX -alias g4_wildcardcert
+-noprompt</p>
+<p>You can verify the single entry with the alias of g4_wildcardcert</p>
+<p>keytool -list -keystore [keystore name]</p>
+<p>You can then verify the entirety of the new keystore</p>
+<p>keytool -list -keystore [keystore name] -v</p>
+<p>It should show the private key, host cert, and CA cert  </p>
+<p>Passwords mentioned in the commands can be derived from the
+java_keystore automation in SS\&amp;M. Unless overridden, the default is
+changeit.  This process can probably be done without them but I
+maintained the existing passwords in case JBoss and Tomcat have the
+passwords configured in their XML files.  </p>
+<p>Once complete and verified, the keystore can be added to automation with
+the prior mentioned steps:  </p>
+<p>Base64 encode the file:</p>
+<p>openssl enc -base64 \&lt;[filename of the keystore]&gt;[new filename]</p>
+<p>Add the variable you want the contents assigned to the top of the
+newly encoded file, usually:</p>
+<p>---</p>
+<p>variable_name: |</p>
+<p>encoded lines are here....</p>
+<p>You MUST add 2 spaces before each of the encoded lines or ansible
+will not read the file into the variable  </p>
+<p>You can then vault the file with ansible.</p>
+<h2 id="jboss-keystores"><strong>JBoss Keystores</strong></h2>
+<p>Jboss domain keystores are located at
+<strong>/etc/jbossas/domain/jboss.keystore.</strong></p>
+<p>This keystore is required for the HCs to be able to connect to the DC.</p>
+<p>Once you have created the above keystore, you can drop this file into
+the above location <strong>(name must remain jboss.keystore).</strong></p>
+<h2 id="springboot-keystores"><strong>Springboot Keystores</strong></h2>
+<p>Springboot Keystores use the same keystore as jboss. On the springboot
+hosts, this file is located at **/etc/pki/java/springboot.keystore. **</p>
+<p>This keystore is used for the springboot microservices to contact one
+another directly.</p>
+<p>The jboss.keystore file for a given environment can be dropped into this
+location on a given springboot server <strong>(name must remain
+springboot.keystore)</strong>. Afterwards, any springboot services would need
+to be restarted for the updated keystore to take effect.</p>
+<h2 id="flydesk-keystores"><strong>Flydesk Keystores</strong></h2>
+<p><strong>IMFWS</strong> Flydesk keystores are located at <strong>/usr/share/java/tomcat</strong></p>
+<p>The keystore file for a given environment can be dropped into this
+location on a given server <strong>(name must remain keystore)</strong>. Afterwards,
+Flydesk (service name: flydesk.target) service would need to be
+restarted for the updated keystore to take effect.</p>
+<h2 id="inflight-keystores"><strong>INFlight Keystores</strong></h2>
+<p><strong>IMFWS (InFlight Flydesk)</strong> keystores are located at
+<strong>/usr/share/java/tomcat7</strong></p>
+<p>The keystore file for a given environment can be dropped into this
+location on a given server <strong>(name must remain keystore)</strong>. Afterwards,
+it is easier to just <strong>restart the host</strong> so Tomcat and the 4 Flydesk
+services (admin, discovery, edge, and gatekeeper) will start up in the
+correct order.</p>
+<p><strong>IMOWS (InFlight mobile)</strong> does not appear to have a keystore.</p>
+<h2 id="jenkins-keystores"><strong>Jenkins Keystores</strong></h2>
+<p>Jenkins keystores are stored in /var/lib/jenkins/.keystore and have
+slightly different requirements.  There are two entries with two aliases
+in this keystore: "1" and "internal_ca".  The "1" alias is reserved for
+the certificate and the "internal_ca" for the CA bundle cert.</p>
+<p>Assign the "1" alias to the cert:</p>
+<p>openssl x509 -in _.trn.allegiantair.com -setalias "1" -out
+_.trn.allegiantair.com.alias.crt</p>
+<p>After gathering the certificate, CA bundle, and private key, bundle them
+all together:</p>
+<p>openssl pkcs12 -export -out _.trn.allegiantair.com.pk12 -name 1 -caname
+internal_ca -inkey _.trn.allegiantair.com.key -in
+_.trn.allegiantair.com.alias.crt -certfile gd_bundle-g2-g1.crt</p>
+<p>Now, create the keystore from the pkcs12 bundle (note: the password used
+will be the same for all fields and can be found in the "ps -ef | grep
+jenkins" output on the host):</p>
+<p>keytool -importkeystore -srckeystore \&lt;path-to-bundle-file.pk12&gt;
+-srcstoretype pkcs12 -destkeystore jenkins.example.com.jks
+-deststoretype JKS</p>
+<p>Finally, add the second entry for the "internal_ca" alias:</p>
+<p>keytool -import -alias internal_ca -file gd_bundle-g2-g1.crt -keystore
+jboss.keystore.trn.jenkins</p>
 
 
 
@@ -682,7 +751,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Mulesoft%2BSSL%2Bcertificate%2Brenewal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mulesoft SSL certificate renewal">
+          <a href="../AnyConnect%2BCertificate%2Bfor%2BVPN/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AnyConnect Certificate for VPN">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -692,20 +761,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Mulesoft SSL certificate renewal
+                AnyConnect Certificate for VPN
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Mulesoft%2Bapplications%2Bdeploy/" class="md-footer__link md-footer__link--next" aria-label="Next: Mulesoft applications deploy">
+          <a href="../Mulesoft%2BHealth%2BChecks/" class="md-footer__link md-footer__link--next" aria-label="Next: Mulesoft Health Checks">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Mulesoft applications deploy
+                Mulesoft Health Checks
               </div>
             </div>
             <div class="md-footer__button md-icon">
