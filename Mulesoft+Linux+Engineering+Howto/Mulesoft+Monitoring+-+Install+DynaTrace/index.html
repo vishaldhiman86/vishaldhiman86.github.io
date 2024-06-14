@@ -13,25 +13,25 @@
       
       
       
-        <link rel="prev" href="../Java%2BKeystores/">
+        <link rel="prev" href="../Mulesoft%2BLinux%2BEngineering%2BHowto/">
       
       
-        <link rel="next" href="../Mulesoft%2BLinux%2BEngineering%2BHowto/">
+        <link rel="next" href="../Mulesoft%2BSSL%2Bcertificate%2Brenewal/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
     
     
       
-        <title>Mulesoft Health Checks - AWS Docs</title>
+        <title>Mulesoft Monitoring - Install DynaTrace - AWS Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,14 +50,14 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -66,7 +66,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mulesoft-health-checks" class="md-skip">
+        <a href="#mulesoft-monitoring-install-dynatrace" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="AWS Docs" class="md-header__button md-logo" aria-label="AWS Docs" data-md-component="logo">
+    <a href="../.." title="AWS Docs" class="md-header__button md-logo" aria-label="AWS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 14.27 10.64 13A11.242 11.242 0 0 0 5 10.18v6.95c2.61.34 5 1.34 7 2.82 2-1.48 4.39-2.48 7-2.82v-6.95c-2.16.39-4.09 1.39-5.64 2.82M19 8.15c.65-.1 1.32-.15 2-.15v11c-3.5 0-6.64 1.35-9 3.54C9.64 20.35 6.5 19 3 19V8c.68 0 1.35.05 2 .15 2.69.41 5.1 1.63 7 3.39 1.9-1.76 4.31-2.98 7-3.39M12 6c.27 0 .5-.1.71-.29.19-.21.29-.44.29-.71s-.1-.5-.29-.71C12.5 4.11 12.27 4 12 4s-.5.11-.71.29c-.18.21-.29.45-.29.71s.11.5.29.71c.21.19.45.29.71.29m2.12 1.12a2.997 2.997 0 1 1-4.24-4.24 2.997 2.997 0 1 1 4.24 4.24Z"/></svg>
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mulesoft Health Checks
+              Mulesoft Monitoring - Install DynaTrace
             
           </span>
         </div>
@@ -241,7 +241,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AWS Docs" class="md-nav__button md-logo" aria-label="AWS Docs" data-md-component="logo">
+    <a href="../.." title="AWS Docs" class="md-nav__button md-logo" aria-label="AWS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 14.27 10.64 13A11.242 11.242 0 0 0 5 10.18v6.95c2.61.34 5 1.34 7 2.82 2-1.48 4.39-2.48 7-2.82v-6.95c-2.16.39-4.09 1.39-5.64 2.82M19 8.15c.65-.1 1.32-.15 2-.15v11c-3.5 0-6.64 1.35-9 3.54C9.64 20.35 6.5 19 3 19V8c.68 0 1.35.05 2 .15 2.69.41 5.1 1.63 7 3.39 1.9-1.76 4.31-2.98 7-3.39M12 6c.27 0 .5-.1.71-.29.19-.21.29-.44.29-.71s-.1-.5-.29-.71C12.5 4.11 12.27 4 12 4s-.5.11-.71.29c-.18.21-.29.45-.29.71s.11.5.29.71c.21.19.45.29.71.29m2.12 1.12a2.997 2.997 0 1 1-4.24-4.24 2.997 2.997 0 1 1 4.24 4.24Z"/></svg>
@@ -271,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AnyConnect%2BCertificate%2Bfor%2BVPN/" class="md-nav__link">
+      <a href="../../AnyConnect%2BCertificate%2Bfor%2BVPN/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%2BKeystores/" class="md-nav__link">
+      <a href="../../Java%2BKeystores/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -312,15 +312,65 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
       
         
       
+        
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mulesoft+Linux+Engineering+Howto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mulesoft+Linux+Engineering+Howto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mulesoft%2BHealth%2BChecks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -329,13 +379,13 @@
   
 
       </a>
-      
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -353,15 +403,25 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
     
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Mulesoft%2BMonitoring%2B-%2BInstall%2BDynaTrace/" class="md-nav__link">
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -370,12 +430,14 @@
   
 
       </a>
+      
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -393,9 +455,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -413,9 +476,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -433,9 +497,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -453,9 +518,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -473,9 +539,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -493,9 +560,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -513,6 +581,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -521,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tags/" class="md-nav__link">
+      <a href="../../tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -570,46 +646,379 @@
   
 
 
-<h1 id="mulesoft-health-checks">Mulesoft Health Checks</h1>
-<p><strong><span class="underline">Mulesoft Apps - Health checks:</span></strong></p>
+<h1 id="mulesoft-monitoring-install-dynatrace">Mulesoft Monitoring - Install DynaTrace</h1>
 <ul>
-<li>Below listed healthchecks are for STG Env. To run the same for PRD,
-    remove the "<a href="https://stg">https://stg</a>."</li>
+<li>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>
+<h2 id="firewall">Firewall</h2>
+<ul>
+<li>
+<p>Outbound access from the Mulesoft RTF cluster IP space to
+    54.198.108.77, 54.227.190.204, 50.17.238.238 IPs on port
+    443/tcp</p>
+</li>
+<li>
+<p>The FQDN is: gah29713.live.dynatrace.com</p>
+</li>
 </ul>
-<p>aerodata-sys-api -
-<a href="https://stg.api.aws.allegiantair.com/aerodata-sys-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/aerodata-sys-api/diag?IncludeExternal=true</a><br />
-comms-exp-api -
-<a href="https://stg.api.aws.allegiantair.com/comms-exp-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/comms-exp-api/diag?IncludeExternal=true</a><br />
-cfdi-process-api -
-<a href="https://stg.api.aws.allegiantair.com/cfdi-process-api/diag?includeExternal=true">https://stg.api.aws.allegiantair.com/cfdi-process-api/diag?includeExternal=true</a><br />
-aip-errormngmt-proc-api -
-<a href="https://stg.api.aws.allegiantair.com/aip-errormngmt-proc-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/aip-errormngmt-proc-api/diag?IncludeExternal=true</a><br />
-navitaire-bridge-proc-api -
-<a href="https://stg.api.aws.allegiantair.com/navitaire-bridge-proc-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/navitaire-bridge-proc-api/diag?IncludeExternal=true</a><br />
-g4-exp-api-impl -
-<a href="https://stg.api.aws.allegiantair.com/g4-exp-api-impl/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/g4-exp-api-impl/diag?IncludeExternal=true</a><br />
-fuel-management-proc-api -
-<a href="https://stg.api.aws.allegiantair.com/fuel-management-proc-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/fuel-management-proc-api/diag?IncludeExternal=true</a><br />
-financial-proc-api -
-<a href="https://stg.api.aws.allegiantair.com/financial-proc-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/financial-proc-api/diag?IncludeExternal=true</a><br />
-edicom-system-api -
-<a href="https://stg.api.aws.allegiantair.com/edicom-system-api/diag?includeExternal=true">https://stg.api.aws.allegiantair.com/edicom-system-api/diag?includeExternal=true</a><br />
-trax-fin-sys-api-impl -
-<a href="https://stg.api.aws.allegiantair.com/trax-fin-sys-api-impl/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/trax-fin-sys-api-impl/diag?IncludeExternal=true</a><br />
-sap-sys-api-impl -
-<a href="https://stg.api.aws.allegiantair.com/sap-sys-api-impl/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/sap-sys-api-impl/diag?IncludeExternal=true</a><br />
-ops-typeb-proc-api -
-<a href="https://stg.api.aws.allegiantair.com/ops-typeb-proc-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/ops-typeb-proc-api/diag?IncludeExternal=true</a><br />
-ops-navitaire-proc-api -
-<a href="https://stg.api.aws.allegiantair.com/ops-navitaire-proc-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/ops-navitaire-proc-api/diag?IncludeExternal=true</a><br />
-onesource-system-api -
-<a href="https://stg.api.aws.allegiantair.com/onesource-system-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/onesource-system-api/diag?IncludeExternal=true</a><br />
-navitaire-sys-api -
-<a href="https://stg.api.aws.allegiantair.com/navitaire-sys-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/navitaire-sys-api/diag?IncludeExternal=true</a><br />
-nmqp-exp-api -
-<a href="https://stg.api.aws.allegiantair.com/nmqp-exp-api/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/nmqp-exp-api/diag?IncludeExternal=true</a><br />
-helloworld -
-<a href="https://stg.api.aws.allegiantair.com/helloworld/diag?IncludeExternal=true">https://stg.api.aws.allegiantair.com/helloworld/diag?IncludeExternal=true</a></p>
+</li>
+<li>
+<h2 id="access-to-internet-on-the-host-you-are-running-the-install-or-a-local-copy-of-the-files-needed-from-git">Access to internet on the host you are running the install or a local copy of the files needed from GIT</h2>
+<ul>
+<li>
+<p><a href="https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.10.0/kubernetes.yaml">https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.10.0/kubernetes.yaml</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.10.0/kubernetes-csi.yaml">https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.10.0/kubernetes-csi.yaml</a></p>
+</li>
+<li>
+<p><a href="https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/v0.10.0/assets/samples/cloudNativeFullStack.yaml">https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/v0.10.0/assets/samples/cloudNativeFullStack.yaml</a>
+    ( you will need to edit this file before the installation)</p>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="access-to-the-mulesoft-environment">Access to the Mulesoft environment</h2>
+<ul>
+<li>kubectl installed, awsauth etc. you can follow <a href="https://ltimindtree-my.sharepoint.com/display/SEL/Setup+access+to+Mulesoft+kubernetes+environments">Setup access
+    to Mulesoft kubernetes
+    environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>
+<h1 id="installation-of-dynatrace-cloudnativefullstack">Installation of DynaTrace cloudNativeFullStack</h1>
+<ul>
+<li>
+<p>Checkout the documentation:
+    <a href="https://www.dynatrace.com/support/help/shortlink/full-stack-dto-k8#manual">https://www.dynatrace.com/support/help/shortlink/full-stack-dto-k8#manual</a></p>
+</li>
+<li>
+<p>Create dynatrace namespace</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>kubectl create namespace dynatrace</p>
+</blockquote>
+<ul>
+<li>Install kubernetes DT operatior ( if your system doesn't have access
+    to WWW, like the jumphost, then download the file and rsync it to
+    the jumphost or the host you are operation on ).</li>
+</ul>
+<blockquote>
+<p>kubectl apply -f
+https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.10.0/kubernetes.yaml</p>
+</blockquote>
+<ul>
+<li>
+<p>Expected output</p>
+</li>
+<li>
+<p>poddisruptionbudget.policy/dynatrace-webhook created</p>
+</li>
+<li>
+<p>serviceaccount/dynatrace-activegate created</p>
+</li>
+<li>
+<p>serviceaccount/dynatrace-kubernetes-monitoring created</p>
+</li>
+<li>
+<p>serviceaccount/dynatrace-dynakube-oneagent-privileged created</p>
+</li>
+<li>
+<p>serviceaccount/dynatrace-dynakube-oneagent-unprivileged created</p>
+</li>
+<li>
+<p>serviceaccount/dynatrace-operator created</p>
+</li>
+<li>
+<p>serviceaccount/dynatrace-webhook created</p>
+</li>
+<li>
+<p>customresourcedefinition.apiextensions.k8s.io/dynakubes.dynatrace.com
+    created</p>
+</li>
+<li>
+<p>clusterrole.rbac.authorization.k8s.io/dynatrace-kubernetes-monitoring
+    created</p>
+</li>
+<li>
+<p>clusterrole.rbac.authorization.k8s.io/dynatrace-operator created</p>
+</li>
+<li>
+<p>clusterrole.rbac.authorization.k8s.io/dynatrace-webhook created</p>
+</li>
+<li>
+<p>clusterrolebinding.rbac.authorization.k8s.io/dynatrace-kubernetes-monitoring
+    created</p>
+</li>
+<li>
+<p>clusterrolebinding.rbac.authorization.k8s.io/dynatrace-operator
+    created</p>
+</li>
+<li>
+<p>clusterrolebinding.rbac.authorization.k8s.io/dynatrace-webhook
+    created</p>
+</li>
+<li>
+<p>role.rbac.authorization.k8s.io/dynatrace-operator created</p>
+</li>
+<li>
+<p>role.rbac.authorization.k8s.io/dynatrace-webhook created</p>
+</li>
+<li>
+<p>rolebinding.rbac.authorization.k8s.io/dynatrace-operator created</p>
+</li>
+<li>
+<p>rolebinding.rbac.authorization.k8s.io/dynatrace-webhook created</p>
+</li>
+<li>
+<p>service/dynatrace-webhook created</p>
+</li>
+<li>
+<p>deployment.apps/dynatrace-operator created</p>
+</li>
+<li>
+<p>deployment.apps/dynatrace-webhook created</p>
+</li>
+<li>
+<p>mutatingwebhookconfiguration.admissionregistration.k8s.io/dynatrace-webhook
+    created</p>
+</li>
+</ul>
+<blockquote>
+<p>validatingwebhookconfiguration.admissionregistration.k8s.io/dynatrace-webhook
+created</p>
+</blockquote>
+<ul>
+<li>Install kubernetes DT operatior CSI agent ( if your system doesn't
+    have access to WWW, like the jumphost, then download the file and
+    rsync it to the jumphost or the host you are operation on).</li>
+</ul>
+<blockquote>
+<p>kubectl apply -f
+https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.10.0/kubernetes-csi.yaml</p>
+</blockquote>
+<ul>
+<li>
+<p>Expected output</p>
+</li>
+<li>
+<p>serviceaccount/dynatrace-oneagent-csi-driver created</p>
+</li>
+<li>
+<p>clusterrole.rbac.authorization.k8s.io/dynatrace-oneagent-csi-driver
+    created</p>
+</li>
+<li>
+<p>clusterrolebinding.rbac.authorization.k8s.io/dynatrace-oneagent-csi-driver
+    created</p>
+</li>
+<li>
+<p>role.rbac.authorization.k8s.io/dynatrace-oneagent-csi-driver created</p>
+</li>
+<li>
+<p>rolebinding.rbac.authorization.k8s.io/dynatrace-oneagent-csi-driver
+    created</p>
+</li>
+<li>
+<p>daemonset.apps/dynatrace-oneagent-csi-driver created</p>
+</li>
+<li>
+<p>csidriver.storage.k8s.io/csi.oneagent.dynatrace.com created</p>
+</li>
+</ul>
+<blockquote>
+<p>priorityclass.scheduling.k8s.io/dynatrace-high-priority created</p>
+</blockquote>
+<ul>
+<li>Validate the installation so far</li>
+</ul>
+<blockquote>
+<p>kubectl -n dynatrace wait pod --for=condition=ready
+--selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook
+--timeout=300s</p>
+</blockquote>
+<ul>
+<li>
+<p>Expected output ( the trailing hash will be different ).</p>
+</li>
+<li>
+<p>pod/dynatrace-webhook-5c67d77f4c-57rvq condition met</p>
+</li>
+</ul>
+<blockquote>
+<p>pod/dynatrace-webhook-5c67d77f4c-tscqz condition met</p>
+</blockquote>
+<ul>
+<li>
+<p>Login to DynaTrace UI</p>
+<ul>
+<li>
+<p>Manage / DynaTrace Hub</p>
+</li>
+<li>
+<p>TODO - missing the point where the tokens are generated</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For <strong>cloudNativeFullStack</strong> and applicationMonitoring, create a
+    secret named dynakube holding both the API token and the
+    dataIngestToken, see Tokens and permissions required. Be sure to
+    replace the placeholders (\&lt;...&gt;) with your own values.</p>
+</li>
+</ul>
+<blockquote>
+<p>kubectl -n dynatrace create secret generic dynakube
+--from-literal="apiToken=\&lt;API_TOKEN&gt;"
+--from-literal="dataIngestToken=\&lt;DATA_INGEST_TOKEN&gt;"</p>
+</blockquote>
+<ul>
+<li>Download the custom config of DynaKube</li>
+</ul>
+<blockquote>
+<p>wget
+https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/v0.10.0/assets/samples/cloudNativeFullStack.yaml</p>
+</blockquote>
+<ul>
+<li>
+<p>Edit the downloaded file and adjust the first few lines to look like
+    this, MAKE SURE you give it metadata/name as you wish to appear in
+    Infrastructure/Kubernetes. This will be used as a filter for all
+    workloads/pods etc. Also make sure the tokens: are set to "dynakube"</p>
+</li>
+<li>
+<p>apiVersion: dynatrace.com/v1beta1</p>
+</li>
+<li>
+<p>kind: DynaKube</p>
+</li>
+<li>
+<p>metadata:</p>
+</li>
+<li>
+<p>name: mule-stg-rtf</p>
+</li>
+<li>
+<p>namespace: dynatrace</p>
+</li>
+<li>
+<p>spec:</p>
+</li>
+<li>
+<p># Dynatrace apiUrl including the `/api` path at the end.</p>
+</li>
+<li>
+<p># For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.</p>
+</li>
+<li>
+<p># For Managed, change the apiUrl address.</p>
+</li>
+<li>
+<p># For instructions on how to determine the environment ID and how
+    to configure the apiUrl address, see
+    https://www.dynatrace.com/support/help/reference/dynatrace-concepts/environment-id/.</p>
+</li>
+<li>
+<p>apiUrl: https://gah29713.live.dynatrace.com/api</p>
+</li>
+<li></li>
+<li>
+<p># Optional: Name of the secret holding the credentials required to
+    connect to the Dynatrace tenant</p>
+</li>
+<li>
+<p># If unset, the name of this custom resource is used</p>
+</li>
+<li>
+<p>#</p>
+</li>
+<li>
+<p>tokens: "dynakube"</p>
+</li>
+<li></li>
+<li>Install the DynaKube</li>
+</ul>
+<blockquote>
+<p>kubectl apply -f cloudNativeFullStack.yaml</p>
+</blockquote>
+<ul>
+<li>Expected output</li>
+</ul>
+<blockquote>
+<p>dynakube.dynatrace.com/mule-stg-rtf created</p>
+</blockquote>
+<ul>
+<li>Pull the cluster ID as you will need it to manually connect it in
+    the Dynatrace UI</li>
+</ul>
+<blockquote>
+<p>kubectl get namespace kube-system -o jsonpath='{.metadata.uid}'</p>
+</blockquote>
+<ul>
+<li>
+<p>Login to Dynatrace UI</p>
+</li>
+<li>
+<p>Checkout this documentation
+    <a href="https://www.dynatrace.com/support/help/shortlink/deploy-ag-dynatrace-op#local">https://www.dynatrace.com/support/help/shortlink/deploy-ag-dynatrace-op#local</a>
+    , We'll use connect manually method</p>
+</li>
+<li>
+<h4 id="provide-the-kubernetes-cluster-id-in-the-dynatrace-web-ui">Provide the Kubernetes cluster ID in the Dynatrace web UI</h4>
+<ul>
+<li>
+<blockquote>
+<p>In the <a href="https://www.dynatrace.com/support/help/get-started/navigation">Dynatrace
+    &gt; menu</a>,
+    &gt; go to <strong>Kubernetes</strong>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Select <strong>Connect manually</strong>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>On the Kubernetes cluster monitoring settings page, provide a
+    &gt; <strong>Name</strong>, and then turn on <strong>Connect containerized ActiveGate
+    &gt; to local Kubernetes API endpoint</strong>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>For <strong>Kubernetes cluster ID</strong>, enter the UID obtained earlier.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Select <strong>Save changes</strong> to save your configuration. <strong>Note:</strong>
+    &gt; You can save your configuration even if the ActiveGate isn't
+    &gt; ready to connect, and finish the configuration later. To
+    &gt; verify if it's ready, select <strong>Test configuration</strong>.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Give it few minutes, when you navigate to Infrastructure/Kubernetes
+    you should see a new entry mule-rtf-stg.</p>
+</li>
+<li>
+<p>Go to settings and enable "Events"</p>
+</li>
+</ul>
 
 
 
@@ -627,12 +1036,13 @@ helloworld -
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
       
     </span>
     <nav>
       
-        <a href="mailto:vishal.dhiman@allegiantair.com">Vishal Dhiman</a>
+        <a href="mailto:vishal.dhiman@allegiantair.com">Vishal Dhiman</a>, 
+        <a href="mailto:gnanasekar.m@allegiantair.com">gnanasekar</a>
     </nav>
   </span>
 
@@ -661,7 +1071,7 @@ helloworld -
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Java%2BKeystores/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Java Keystores">
+          <a href="../Mulesoft%2BLinux%2BEngineering%2BHowto/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mulesoft Linux Engineering Howto">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -671,20 +1081,20 @@ helloworld -
                 Previous
               </span>
               <div class="md-ellipsis">
-                Java Keystores
+                Mulesoft Linux Engineering Howto
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Mulesoft%2BLinux%2BEngineering%2BHowto/" class="md-footer__link md-footer__link--next" aria-label="Next: Mulesoft Linux Engineering Howto">
+          <a href="../Mulesoft%2BSSL%2Bcertificate%2Brenewal/" class="md-footer__link md-footer__link--next" aria-label="Next: Mulesoft SSL certificate renewal">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Mulesoft Linux Engineering Howto
+                Mulesoft SSL certificate renewal
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -718,12 +1128,12 @@ helloworld -
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.tooltips", "navigation.footer", "navigation.tracking", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.tooltips", "navigation.footer", "navigation.tracking", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
-        <script src="../js/open_in_new_tab.js"></script>
+        <script src="../../js/open_in_new_tab.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
