@@ -1,11 +1,1 @@
-| Jiraa Issue                                                        | Desciption                                                                                  | Status | Last updatedDate |            |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ------ | ---------------- | ---------- |
-| [SEL-6533](https://allegiantair.atlassian.net/browse/SEL-6533)     | Ensure AIS SOX audit logs are being ingested into Exabeam                                   | Done   | 15-05-2024       |            |
-| [SEL-4707](https://allegiantair.atlassian.net/browse/SEL-4707)     | Remove All Nagios Alerts for Servers                                                        | Done   | 05-04-2024       |            |
-| [SEL-5358](https://allegiantair.atlassian.net/browse/SEL-5358)     | Deploy the rest of the code to VSWPRDSPNWS43/44                                             | Done   | 12-04-2024       |            |
-| [SEL-7007](https://allegiantair.atlassian.net/browse/SEL-7007)     | February 2024 Linux Patching                                                                | Done   | 14-05-2024       |            |
-| [SEL-7022](https://allegiantair.atlassian.net/browse/SEL-7022)     | February 2024 AWS Patching                                                                  | Done   | 07-04-2024       |            |
-| [SEL-6964](https://allegiantair.atlassian.net/browse/SEL-6964)     | Exabeam: Needing 10.12.32.81 prod Linux syslogs to Exabeam SIEM                             | Done   | 27-03-2024       |            |
-| [FOS-9859](https://allegiantair.atlassian.net/browse/FOS-9859)     | Certificate issue in IN1 for iam-ais-connector-web artifact                                 | Done   | 28-03-2024       |            |
-| [SEL-5659](https://allegiantair.atlassian.net/browse/SEL-5659)     | Jboss/Java testing and overhead                                                             | Done   | 26-03-2024       |            |
-| [SEL-5660](https://allegiantair.atlassian.net/browse/SEL-5660)     | Varnish testing                                                                             | Done   | 26-03-2024       |            |
+
