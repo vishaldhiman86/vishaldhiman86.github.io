@@ -13,10 +13,8 @@
       
       
       
-        <link rel="prev" href="../AnyConnect%2BCertificate%2Bfor%2BVPN/">
+        <link rel="prev" href="../tags/">
       
-      
-        <link rel="next" href="../Mulesoft%2BLinux%2BEngineering%2BHowto/Mulesoft%2BHealth%2BChecks/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +22,7 @@
     
     
       
-        <title>Java Keystores - AWS Docs</title>
+        <title>Vishal - AWS Docs</title>
       
     
     
@@ -84,11 +82,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#java-keystores" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -121,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Java Keystores
+              Vishal
             
           </span>
         </div>
@@ -288,19 +281,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Java%2BKeystores/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -309,7 +293,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -612,10 +595,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../vishal/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -624,6 +614,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -645,8 +636,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -664,136 +653,84 @@
   
 
 
-<h1 id="java-keystores">Java Keystores</h1>
-<h1 id="video-overview">Video Overview:</h1>
-<p><a class="glightbox" href="../media/image1.tmp" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="" src="../media/image1.tmp" /></a></p>
-<p>The following procedure applies to Tomcat and Jboss:</p>
-<p>Please NOTE: </p>
-<ul>
-<li>
-<p>for Jboss Domain (legacy) you need to use a 'keytool' command on one
-    of the old jboss domain nodes, otherwise the cert format is not
-    recognized on these old hosts.</p>
-</li>
-<li>
-<p>for Tomcat keystore same applies.</p>
-</li>
-<li>
-<p>for Jboss Standalone and Springboot you can compile the keystore on
-    your workstation or rather on a Jboss Standalone node.</p>
-</li>
-<li>
-<p>I'm  not exactly sure why that is, seems to me it's a version of
-    keytool matter, but not sure, couldn't spare time to find out why.</p>
-</li>
-</ul>
-<p>Request the Certificate and Key from an InfoSec or Universal resource.
-You will need to request they download the file in a PEM OpenSSL format,
-with separate key and cert files:</p>
-<p>NOTE:</p>
-<p>If you receive a key/cert from Venify, you will need to decrypt it
-before use:</p>
-<p>Use the following command and the supplied password (given to you when
-the certificate was given) to decrypt the files:</p>
-<p>###</p>
-<p>openssl rsa -in \&lt;original encrypted file name&gt; -out \&lt;name of new file
-for decrypted file&gt;</p>
-<p>###</p>
-<p>e.g.:</p>
-<p>openssl rsa -in qa1_wildcard_cert_2022_Key.key_encr -out
-qa1_wildcard_cert_2022_Key.key</p>
-<p><strong>You will then be prompted for the encryption key. Input this, and your
-decrypted file should be generated and can be used in the following
-steps</strong></p>
-<p>To properly create a keystore from scratch</p>
-<p>First make a copy of the cert using the setalias command which will
-force the friendlyName attribute</p>
-<p>openssl x509 -in _.allegiantair.com.crt -setalias "g4_wildcardcert"
--out _.allegiantair.com.alias.crt</p>
-<p>Next, convert the PEM format to pkcs12, which bundles everything
-together (provide password: changeit).</p>
-<p>openssl pkcs12 -export -out _.allegiantair.com.pk12 -name
-g4_wildcardcert -caname g4_wildcardcert -inkey _.allegiantair.com.key
--in _.allegiantair.com.alias.crt -certfile gd_bundle-g2-g1.crt</p>
-<p>Then, you must convert the pkcs bundle to a Java Keystore</p>
-<p>keytool -importkeystore -deststorepass changeit -destkeypass changeit
--destkeystore jboss.keystore.wcz -srckeystore _.allegiantair.com.pk12
--srcstoretype pkcs12 -srcstorepass XXXXXXXXXX -alias g4_wildcardcert
--noprompt</p>
-<p>You can verify the single entry with the alias of g4_wildcardcert</p>
-<p>keytool -list -keystore [keystore name]</p>
-<p>You can then verify the entirety of the new keystore</p>
-<p>keytool -list -keystore [keystore name] -v</p>
-<p>It should show the private key, host cert, and CA cert  </p>
-<p>Passwords mentioned in the commands can be derived from the
-java_keystore automation in SS\&amp;M. Unless overridden, the default is
-changeit.  This process can probably be done without them but I
-maintained the existing passwords in case JBoss and Tomcat have the
-passwords configured in their XML files.  </p>
-<p>Once complete and verified, the keystore can be added to automation with
-the prior mentioned steps:  </p>
-<p>Base64 encode the file:</p>
-<p>openssl enc -base64 \&lt;[filename of the keystore]&gt;[new filename]</p>
-<p>Add the variable you want the contents assigned to the top of the
-newly encoded file, usually:</p>
-<p>---</p>
-<p>variable_name: |</p>
-<p>encoded lines are here....</p>
-<p>You MUST add 2 spaces before each of the encoded lines or ansible
-will not read the file into the variable  </p>
-<p>You can then vault the file with ansible.</p>
-<h2 id="jboss-keystores"><strong>JBoss Keystores</strong></h2>
-<p>Jboss domain keystores are located at
-<strong>/etc/jbossas/domain/jboss.keystore.</strong></p>
-<p>This keystore is required for the HCs to be able to connect to the DC.</p>
-<p>Once you have created the above keystore, you can drop this file into
-the above location <strong>(name must remain jboss.keystore).</strong></p>
-<h2 id="springboot-keystores"><strong>Springboot Keystores</strong></h2>
-<p>Springboot Keystores use the same keystore as jboss. On the springboot
-hosts, this file is located at **/etc/pki/java/springboot.keystore. **</p>
-<p>This keystore is used for the springboot microservices to contact one
-another directly.</p>
-<p>The jboss.keystore file for a given environment can be dropped into this
-location on a given springboot server <strong>(name must remain
-springboot.keystore)</strong>. Afterwards, any springboot services would need
-to be restarted for the updated keystore to take effect.</p>
-<h2 id="flydesk-keystores"><strong>Flydesk Keystores</strong></h2>
-<p><strong>IMFWS</strong> Flydesk keystores are located at <strong>/usr/share/java/tomcat</strong></p>
-<p>The keystore file for a given environment can be dropped into this
-location on a given server <strong>(name must remain keystore)</strong>. Afterwards,
-Flydesk (service name: flydesk.target) service would need to be
-restarted for the updated keystore to take effect.</p>
-<h2 id="inflight-keystores"><strong>INFlight Keystores</strong></h2>
-<p><strong>IMFWS (InFlight Flydesk)</strong> keystores are located at
-<strong>/usr/share/java/tomcat7</strong></p>
-<p>The keystore file for a given environment can be dropped into this
-location on a given server <strong>(name must remain keystore)</strong>. Afterwards,
-it is easier to just <strong>restart the host</strong> so Tomcat and the 4 Flydesk
-services (admin, discovery, edge, and gatekeeper) will start up in the
-correct order.</p>
-<p><strong>IMOWS (InFlight mobile)</strong> does not appear to have a keystore.</p>
-<h2 id="jenkins-keystores"><strong>Jenkins Keystores</strong></h2>
-<p>Jenkins keystores are stored in /var/lib/jenkins/.keystore and have
-slightly different requirements.  There are two entries with two aliases
-in this keystore: "1" and "internal_ca".  The "1" alias is reserved for
-the certificate and the "internal_ca" for the CA bundle cert.</p>
-<p>Assign the "1" alias to the cert:</p>
-<p>openssl x509 -in _.trn.allegiantair.com -setalias "1" -out
-_.trn.allegiantair.com.alias.crt</p>
-<p>After gathering the certificate, CA bundle, and private key, bundle them
-all together:</p>
-<p>openssl pkcs12 -export -out _.trn.allegiantair.com.pk12 -name 1 -caname
-internal_ca -inkey _.trn.allegiantair.com.key -in
-_.trn.allegiantair.com.alias.crt -certfile gd_bundle-g2-g1.crt</p>
-<p>Now, create the keystore from the pkcs12 bundle (note: the password used
-will be the same for all fields and can be found in the "ps -ef | grep
-jenkins" output on the host):</p>
-<p>keytool -importkeystore -srckeystore \&lt;path-to-bundle-file.pk12&gt;
--srcstoretype pkcs12 -destkeystore jenkins.example.com.jks
--deststoretype JKS</p>
-<p>Finally, add the second entry for the "internal_ca" alias:</p>
-<p>keytool -import -alias internal_ca -file gd_bundle-g2-g1.crt -keystore
-jboss.keystore.trn.jenkins</p>
+  <h1>Vishal</h1>
+
+<table>
+<thead>
+<tr>
+<th>Jiraa Issue</th>
+<th>Desciption</th>
+<th>Status</th>
+<th>Last updatedDate</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-6533">SEL-6533</a></td>
+<td>Ensure AIS SOX audit logs are being ingested into Exabeam</td>
+<td>Done</td>
+<td>15-05-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-4707">SEL-4707</a></td>
+<td>Remove All Nagios Alerts for Servers</td>
+<td>Done</td>
+<td>05-04-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-5358">SEL-5358</a></td>
+<td>Deploy the rest of the code to VSWPRDSPNWS43/44</td>
+<td>Done</td>
+<td>12-04-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-7007">SEL-7007</a></td>
+<td>February 2024 Linux Patching</td>
+<td>Done</td>
+<td>14-05-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-7022">SEL-7022</a></td>
+<td>February 2024 AWS Patching</td>
+<td>Done</td>
+<td>07-04-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-6964">SEL-6964</a></td>
+<td>Exabeam: Needing 10.12.32.81 prod Linux syslogs to Exabeam SIEM</td>
+<td>Done</td>
+<td>27-03-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/FOS-9859">FOS-9859</a></td>
+<td>Certificate issue in IN1 for iam-ais-connector-web artifact</td>
+<td>Done</td>
+<td>28-03-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-5659">SEL-5659</a></td>
+<td>Jboss/Java testing and overhead</td>
+<td>Done</td>
+<td>26-03-2024</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://allegiantair.atlassian.net/browse/SEL-5660">SEL-5660</a></td>
+<td>Varnish testing</td>
+<td>Done</td>
+<td>26-03-2024</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -816,7 +753,7 @@ jboss.keystore.trn.jenkins</p>
     </span>
     <nav>
       
-        <a href="mailto:vishal.dhiman@allegiantair.com">Vishal Dhiman</a>
+        <a href="mailto:vishaldhiman86@gmail.com">vishaldhiman86</a>
     </nav>
   </span>
 
@@ -845,7 +782,7 @@ jboss.keystore.trn.jenkins</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../AnyConnect%2BCertificate%2Bfor%2BVPN/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AnyConnect Certificate for VPN">
+          <a href="../tags/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tag Index">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -855,27 +792,11 @@ jboss.keystore.trn.jenkins</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                AnyConnect Certificate for VPN
+                Tag Index
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../Mulesoft%2BLinux%2BEngineering%2BHowto/Mulesoft%2BHealth%2BChecks/" class="md-footer__link md-footer__link--next" aria-label="Next: Mulesoft Health Checks">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Mulesoft Health Checks
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
